@@ -1,0 +1,3 @@
+[submodule "external/slangpy-nn"]
+	path = external/slangpy-nn
+	url = git@github.com:fangjunzhou/slangpy-nn.git

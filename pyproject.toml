@@ -4,8 +4,20 @@ version = "0.1.0"
 description = "A Slang benchmark report"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "slangpy>=0.40.1",
+    "slangpy-nn",
+    "torch>=2.10.0",
+]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.uv.workspace]
+members = [
+    "external/slangpy-nn",
+]
+
+[tool.uv.sources]
+slangpy-nn = { workspace = true }
