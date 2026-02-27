@@ -610,6 +610,11 @@ dependencies = [
     { name = "torch" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "black" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "pytest", specifier = ">=9.0.2" },
@@ -618,6 +623,9 @@ requires-dist = [
     { name = "slangpy-nn", editable = "external/slangpy-nn" },
     { name = "torch", specifier = ">=2.10.0" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "black", specifier = ">=26.1.0" }]
 
 [[package]]
 name = "slangpy"
