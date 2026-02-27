@@ -5,6 +5,8 @@ description = "A Slang benchmark report"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "pytest>=9.0.2",
+    "pytest-benchmark>=5.2.3",
     "slangpy>=0.40.1",
     "slangpy-nn",
     "torch>=2.10.0",
