@@ -5,6 +5,10 @@ description = "A Slang benchmark report"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "jupyterlab>=4.5.5",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.2",
+    "pillow>=12.1.1",
     "pytest>=9.0.2",
     "pytest-benchmark>=5.2.3",
     "slangpy>=0.40.1",
