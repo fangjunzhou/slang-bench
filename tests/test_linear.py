@@ -46,26 +46,33 @@ def test_linear_layer_slang(benchmark, thread_count, num_inputs, num_outputs):
         linear_layer_torch.bias.data.numpy().astype(np.float32)
     )
 
+    eval_fn = linear_eval_module.find_function(f"eval<{num_outputs}, {num_inputs}>")
+    assert (
+        eval_fn is not None
+    ), f"eval function for LinearLayer<{num_inputs}, {num_outputs}> not found"
+
+    eval_fn(
+        model=linear_layer.get_this(),
+        input=input_buf,
+        _result=output_buf,
+    )
+    # Get the output from the output buffer and convert it to a NumPy array.
+    output_array = output_buf.to_numpy().reshape(thread_count, num_outputs)
+    # Compare the output with the reference solution.
+    np.testing.assert_allclose(
+        output_array, output_tensor.numpy(), rtol=1e-5, atol=1e-5
+    )
+
     # Run the benchmark.
     def run():
-        eval_fn = linear_eval_module.find_function(f"eval<{num_outputs}, {num_inputs}>")
-        assert (
-            eval_fn is not None
-        ), f"eval function for LinearLayer<{num_inputs}, {num_outputs}> not found"
         eval_fn(
             model=linear_layer.get_this(),
             input=input_buf,
             _result=output_buf,
         )
         device.wait()
-        # Get the output from the output buffer and convert it to a NumPy array.
-        output_array = output_buf.to_numpy().reshape(thread_count, num_outputs)
-        # Compare the output with the reference solution.
-        np.testing.assert_allclose(
-            output_array, output_tensor.numpy(), rtol=1e-5, atol=1e-5
-        )
 
-    benchmark(run)
+    benchmark.pedantic(run, rounds=100)
 
 
 @pytest.mark.parametrize("batch_size", BATCH_SIZES)
@@ -80,7 +87,7 @@ def test_linear_layer_torch(benchmark, batch_size, num_inputs, num_outputs):
     def run():
         output_tensor = linear_layer(input_tensor)
 
-    benchmark(run)
+    benchmark.pedantic(run, rounds=100)
 
 
 @pytest.mark.parametrize("batch_size", BATCH_SIZES)
@@ -92,15 +99,41 @@ def test_linear_layer_backward_torch(benchmark, batch_size, num_inputs, num_outp
     linear_layer.weight.data.uniform_(-1.0, 1.0)
     linear_layer.bias.data.uniform_(-1.0, 1.0)
 
-    def run():
-        linear_layer.zero_grad()
-        # Check that the gradients of the weights and biases are None before the backward pass.
-        assert linear_layer.weight.grad is None
-        assert linear_layer.bias.grad is None
-        output_tensor = linear_layer(input_tensor)
-        output_tensor.sum().backward()
-        # Check that the gradients of the weights and biases are not None.
-        assert linear_layer.weight.grad is not None
-        assert linear_layer.bias.grad is not None
+    # Forward pass.
+    output_tensor = linear_layer(input_tensor)
+    output_tensor.retain_grad()
+    # Compute a simple loss (sum of outputs) and perform backward pass to compute gradients.
+    s = output_tensor.sum()
+    s.backward(retain_graph=True)
+    # Get the output tensor gradients.
+    output_grad = output_tensor.grad
+    output_tensor.grad = None
+    assert output_grad is not None and not np.allclose(
+        output_grad.numpy(), 0.0
+    ), "Output gradients should not be zero after backward"
+    # Zero the gradients.
+    linear_layer.zero_grad()
+    # Check that the gradients are zero after calling zero_grad.
+    assert linear_layer.weight.grad is None or np.allclose(
+        linear_layer.weight.grad.numpy(), 0.0
+    ), "Weight gradients should be zero after zero_grad"
+    assert linear_layer.bias.grad is None or np.allclose(
+        linear_layer.bias.grad.numpy(), 0.0
+    ), "Bias gradients should be zero after zero_grad"
+    # Backward on linear layer.
+    output_tensor.backward(output_grad, retain_graph=True)
+    # Check that the gradients are not None after backward pass.
+    assert linear_layer.weight.grad is not None and not np.allclose(
+        linear_layer.weight.grad.numpy(), 0.0
+    ), "Weight gradients should not be zero after backward"
+    assert linear_layer.bias.grad is not None and not np.allclose(
+        linear_layer.bias.grad.numpy(), 0.0
+    ), "Bias gradients should not be zero after backward"
 
-    benchmark(run)
+    def setup():
+        linear_layer.zero_grad()
+
+    def run():
+        output_tensor.backward(output_grad, retain_graph=True)
+
+    benchmark.pedantic(run, setup=setup, rounds=100)
