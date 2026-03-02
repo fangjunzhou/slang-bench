@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  2 MAR 2026 14:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/nixos.org) (preloaded format=pdflatex 1980.1.1)  2 MAR 2026 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -481,31 +481,83 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@listing=\count318
 )
 (/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
+exmfdist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
+exmfdist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
+exmfdist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
+exmfdist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen179
+\Gin@req@width=\dimen180
+)
+(/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
+exmfdist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+
+(/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
+exmfdist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
+exmfdist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen181
+\captionmargin=\dimen182
+\caption@leftmargin=\dimen183
+\caption@rightmargin=\dimen184
+\caption@width=\dimen185
+\caption@indent=\dimen186
+\caption@parindent=\dimen187
+\caption@hangindent=\dimen188
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count319
+\c@continuedfloat=\count320
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count321
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count322
+)
+(/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
 exmfdist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count319
+\l__color_backend_stack_int=\count323
 \l__pdf_internal_box=\box62
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -573,25 +625,25 @@ LaTeX Font Info:    ... okay on input line 100.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 100.
+Package hyperref Info: Link coloring OFF on input line 102.
 (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 100.
-Package microtype Info: Applying patch `item' on input line 100.
-Package microtype Info: Applying patch `toc' on input line 100.
-Package microtype Info: Applying patch `eqnum' on input line 100.
-Package microtype Info: Applying patch `footnote' on input line 100.
-Package microtype Info: Applying patch `verbatim' on input line 100.
-LaTeX Info: Redefining \microtypesetup on input line 100.
+LaTeX Info: Redefining \microtypecontext on input line 102.
+Package microtype Info: Applying patch `item' on input line 102.
+Package microtype Info: Applying patch `toc' on input line 102.
+Package microtype Info: Applying patch `eqnum' on input line 102.
+Package microtype Info: Applying patch `footnote' on input line 102.
+Package microtype Info: Applying patch `verbatim' on input line 102.
+LaTeX Info: Redefining \microtypesetup on input line 102.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 100.
+LaTeX Info: Redefining \showhyphens on input line 102.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -603,24 +655,38 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 (/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
 exmfdist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count320
-\scratchdimen=\dimen179
+\scratchcounter=\count324
+\scratchdimen=\dimen189
 \scratchbox=\box63
-\nofMPsegments=\count321
-\nofMParguments=\count322
+\nofMPsegments=\count325
+\nofMParguments=\count326
 \everyMPshowfont=\toks34
-\MPscratchCnt=\count323
-\MPscratchDim=\dimen180
-\MPnumerator=\count324
-\makeMPintoPDFobject=\count325
+\MPscratchCnt=\count327
+\MPscratchDim=\dimen190
+\MPnumerator=\count328
+\makeMPintoPDFobject=\count329
 \everyMPtoPDFconversion=\toks35
 )
+(/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
+exmfdist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
+exmfdist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
 (/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
 exmfdist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 103
+LaTeX Font Info:    Trying to load font information for U+msa on input line 105
 .
 
 (/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
@@ -631,7 +697,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 exmfdist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 103
+LaTeX Font Info:    Trying to load font information for U+msb on input line 105
 .
 
 (/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-t
@@ -675,9 +741,33 @@ hare/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/nix/store/nm4ypm68s2ri5hhrj
 -final-texmfdist/fonts/enc/dvips/cm-super/cm-super-t1.enc}])
 (./_minted/5E8508D8FE122BFA807AC63A0D041DF9.highlight.minted)
 
-[2] (./main.bbl)
+[2]
+<linear_forward_64x64.png, id=48, 462.528pt x 346.896pt>
+File: linear_forward_64x64.png Graphic file (type png)
+<use linear_forward_64x64.png>
+Package pdftex.def Info: linear_forward_64x64.png  used on input line 193.
+(pdftex.def)             Requested size: 178.86702pt x 134.15085pt.
+<linear_forward_256x256.png, id=50, 462.528pt x 346.896pt>
+File: linear_forward_256x256.png Graphic file (type png)
+<use linear_forward_256x256.png>
+Package pdftex.def Info: linear_forward_256x256.png  used on input line 200.
+(pdftex.def)             Requested size: 178.86702pt x 134.15085pt.
 
-[3] (./main.aux)
+
+[3 <./linear_forward_64x64.png> <./linear_forward_256x256.png>]
+<linear_backward_64x64.png, id=68, 462.528pt x 346.896pt>
+File: linear_backward_64x64.png Graphic file (type png)
+<use linear_backward_64x64.png>
+Package pdftex.def Info: linear_backward_64x64.png  used on input line 216.
+(pdftex.def)             Requested size: 178.86702pt x 134.15085pt.
+<linear_backward_256x256.png, id=69, 462.528pt x 346.896pt>
+File: linear_backward_256x256.png Graphic file (type png)
+<use linear_backward_256x256.png>
+Package pdftex.def Info: linear_backward_256x256.png  used on input line 223.
+(pdftex.def)             Requested size: 178.86702pt x 134.15085pt.
+ (./main.bbl)
+
+[4 <./linear_backward_64x64.png> <./linear_backward_256x256.png>] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -686,10 +776,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: B79BF4DB26D3BA856D154EA6C8C84102;937.
  ) 
 Here is how much of TeX's memory you used:
- 16760 strings out of 473201
- 328519 string characters out of 5689025
- 869055 words of memory out of 5000000
- 39638 multiletter control sequences out of 15000+600000
+ 18583 strings out of 473201
+ 364484 string characters out of 5689025
+ 891555 words of memory out of 5000000
+ 41429 multiletter control sequences out of 15000+600000
  590153 words of font info for 150 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,9n,81p,1500b,832s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -718,10 +808,10 @@ rw/times/utmb8a.pfb></nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combin
 ed-full-2024-final-texmfdist/fonts/type1/urw/times/utmr8a.pfb></nix/store/nm4yp
 m68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-texmfdist/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 179358 bytes).
+Output written on main.pdf (4 pages, 312556 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
- 33833 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 150 PDF objects out of 1000 (max. 8388607)
+ 104 compressed objects within 2 object streams
+ 18 named destinations out of 1000 (max. 500000)
+ 33853 words of extra memory for PDF output out of 35830 (max. 10000000)
 

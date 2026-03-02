@@ -55,6 +55,8 @@
 \usepackage{microtype}      % microtypography
 \usepackage{xcolor}         % colors
 \usepackage{minted}         % syntax highlighting for code
+\usepackage{graphicx}       % include graphics
+\usepackage{subcaption}     % subfigures
 
 % Note. For the workshop paper template, both \title{} and \workshoptitle{} are required, with the former indicating the paper title shown in the title and the latter indicating the workshop title displayed in the footnote. 
 \title{Diagnosing the Memory Throughput Bottleneck in the Era of Neural Rendering}
@@ -180,7 +182,53 @@ During the backward pass, considering the upstream gradient $\partial y_{i} \in 
 
 \section{Experiments}
 
-To demonstrate the memory throughput bottleneck of the data-parallel programming model, I implement a simple linear layer both in Slang and PyTorch and compare the performance of the forward and backward passes on a Metal GPU. The Slang implementation uses the data-parallel programming model as described in the previous section, while the PyTorch implementation uses batched matrix multiplication for both the forward and backward passes.
+To demonstrate the memory throughput bottleneck of the data-parallel programming model, I implement a simple linear layer both in Slang and PyTorch and compare the performance of the forward and backward passes on a M3 Pro MacBook with CPU for PyTorch and GPU both PyTorch and Slang.
+
+The benchmark of the forward pass is shown in Figure~\ref{fig:forward}.
+
+\begin{figure*}[h]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{linear_forward_64x64.png}
+		\caption{64x64}
+		\label{fig:forward_64}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{linear_forward_256x256.png}
+		\caption{256x256}
+		\label{fig:forward_256}
+	\end{subfigure}
+	\caption{Forward pass performance across different linear layer sizes. All plots show runtime (ms) vs thread count on log-log scale, comparing Slang Forward, PyTorch Forward (CPU), and PyTorch Forward (GPU).}
+	\label{fig:forward}
+\end{figure*}
+
+As shown in the figure, when the linear layer size is small (64x64), the performance of Slang and PyTorch on GPU are comparable, and both are significantly slower than PyTorch on CPU. This is likely because the overhead of launching GPU kernels and the memory bandwidth bottleneck outweigh the benefits of parallelism for small linear layers. However, when the linear layer size increases to 256x256, the performance of PyTorch on GPU starts to outperform PyTorch on CPU given a large enough thread count (batch size). For comparison, the performance of the naive linear layer implementation in Slang does not improve much with increasing thread count, and it is significantly slower than PyTorch on GPU. As discussed previously, this is likely because the data-parallel implementation in Slang suffers from the memory throughput bottleneck, while PyTorch can leverage optimized matrix multiplication libraries to achieve better performance.
+
+In Figure~\ref{fig:backward}, I also benchmark the backward pass of the linear layer.
+
+\begin{figure*}[h]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{linear_backward_64x64.png}
+		\caption{64x64}
+		\label{fig:backward_64}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{linear_backward_256x256.png}
+		\caption{256x256}
+		\label{fig:backward_256}
+	\end{subfigure}
+	\caption{Backward pass performance across different linear layer sizes. All plots show runtime (ms) vs thread count on log-log scale, comparing Slang Backward, PyTorch Backward (CPU), and PyTorch Backward (GPU).}
+	\label{fig:backward}
+\end{figure*}
+
+The backward pass shows even more pronounced performance differences. Specifically, the backward kernel is only 2.14x slower than the forward kernel in PyTorch on GPU with a $256 \times 256$ linear layer and a batch size of 8192. While in Slang, the backward kernel is 7.47x slower than the forward kernel with the same linear layer size and thread count. The memory throughput bottleneck is significantly worse during backpropagation because threads must use atomic operations to accumulate gradients into shared weight and bias buffers, leading to contention and serialization. PyTorch's optimized batch matrix multiplication approach avoids these issues by reformulating the gradient computation as efficient matrix operations.
 
 \bibliographystyle{plain}
 \bibliography{references}
