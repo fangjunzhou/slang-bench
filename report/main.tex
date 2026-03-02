@@ -230,6 +230,12 @@ In Figure~\ref{fig:backward}, I also benchmark the backward pass of the linear l
 
 The backward pass shows even more pronounced performance differences. Specifically, the backward kernel is only 2.14x slower than the forward kernel in PyTorch on GPU with a $256 \times 256$ linear layer and a batch size of 8192. While in Slang, the backward kernel is 7.47x slower than the forward kernel with the same linear layer size and thread count. The memory throughput bottleneck is significantly worse during backpropagation because threads must use atomic operations to accumulate gradients into shared weight and bias buffers, leading to contention and serialization. PyTorch's optimized batch matrix multiplication approach avoids these issues by reformulating the gradient computation as efficient matrix operations.
 
+\section{Conclusion and Future Work}
+
+In this report, I have discussed the memory throughput bottleneck of the data-parallel programming model in the context of neural rendering systems implemented in Slang. I have shown that the naive implementation of linear layers in Slang can lead to significant performance degradation due to the need for each thread to access the same weight and bias parameters, which can saturate the memory bandwidth. In contrast, by reformulating the linear layer evaluation and backpropagation as batch matrix multiplications, we can leverage optimized linear algebra libraries to achieve much better performance. This highlights the importance of considering the memory access patterns and computational structure when designing neural rendering systems.
+
+It's worth noting that there're some attempts to mitigate the memory throughput bottleneck in Slang by using shared memory and collaborative vectors. However, these approaches requires the programmer to have a much deeper understanding of the GPU architecture and only works on certain NVIDIA hardware with tensor cores. I'm fully convinced that a more general solution to this problem is to extend the Slang programming model to support a more flexible execution model that allows for both data-parallel and array programming. This would enable programmers to write more efficient code for neural rendering systems without having to worry about the memory access patterns and synchronization issues that arise from the data-parallel programming model.
+
 \bibliographystyle{plain}
 \bibliography{references}
 

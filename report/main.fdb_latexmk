@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1772493458.18091 "main.aux" "main.bbl" "main" 1772493853.16792 0
+["bibtex main"] 1772494240.5554 "main.aux" "main.bbl" "main" 1772494241.92174 0
   "./references.bib" 1772485634.14208 8268 11b6e43ed86f573b5904b7306309a3dd ""
   "/nix/store/nm4ypm68s2ri5hhrj7i86qq76h7nlgsc-texlive-combined-full-2024-final-texmfdist/bibtex/bst/base/plain.bst" 1 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1772493852.96537 3092 f275ca3923fd17bcc40305ef09c79d83 "pdflatex"
+  "main.aux" 1772494241.71797 3215 cdfcd34b7e34cd63e69b0d374110e643 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1772493851.68463 "main.tex" "main.pdf" "main" 1772493853.16803 0
+["pdflatex"] 1772494240.62021 "main.tex" "main.pdf" "main" 1772494241.92186 0
   "/nix/store/gq0jbxjx51sw1dhxv55k5x0qlsnn9p9i-texlive-combined-full-2024-final/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1 5467273 3451607d3acad26cd259978c15d6b2df ""
   "/nix/store/gq0jbxjx51sw1dhxv55k5x0qlsnn9p9i-texlive-combined-full-2024-final/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1 3353379 c91ec2e05ce9177d53149271175ed8b4 ""
   "/nix/store/gq0jbxjx51sw1dhxv55k5x0qlsnn9p9i-texlive-combined-full-2024-final/share/texmf-var/web2c/texmf.cnf" 1 44167 957b983562ce880486ba9f3b425db186 ""
@@ -141,10 +141,10 @@
   "linear_backward_64x64.png" 1772493354.80768 37825 8ca8167f8f847edcebf1659c05223870 ""
   "linear_forward_256x256.png" 1772493354.0637 37157 c4a95d3740b832284115f4ed47a26849 ""
   "linear_forward_64x64.png" 1772493354.35039 34095 f8a98902dc22f905b1b0a2dadba74b3c ""
-  "main.aux" 1772493852.96537 3092 f275ca3923fd17bcc40305ef09c79d83 "pdflatex"
-  "main.bbl" 1772493458.24706 1220 3cdea5216c6b1777d11d8d003baa95c7 "bibtex main"
-  "main.out" 1772493852.96589 937 b79bf4db26d3ba856d154ea6c8c84102 "pdflatex"
-  "main.tex" 1772493851.67783 15531 3c8f461af55eeb81628feda04c40fb3e ""
+  "main.aux" 1772494241.71797 3215 cdfcd34b7e34cd63e69b0d374110e643 "pdflatex"
+  "main.bbl" 1772494240.61792 1220 3cdea5216c6b1777d11d8d003baa95c7 "bibtex main"
+  "main.out" 1772494241.71839 1119 04cd80ca0d3aa901ebd9ad9fa907f482 "pdflatex"
+  "main.tex" 1772494237.47628 17071 999e11dd24fccdeb30339ebb1ae2fb29 ""
   "neurips_2025.sty" 1772483563.33493 12233 8b583c3878f810055583ff685b8f6724 ""
   (generated)
   "main.aux"
