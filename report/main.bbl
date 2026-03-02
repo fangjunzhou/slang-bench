@@ -1,0 +1,27 @@
+\begin{thebibliography}{1}
+
+\bibitem{bangaruSLANGDFastModular2023}
+Sai~Praveen Bangaru, Lifan Wu, Tzu-Mao Li, Jacob Munkberg, Gilbert Bernstein,
+  Jonathan {Ragan-Kelley}, Fr{\'e}do Durand, Aaron Lefohn, and Yong He.
+\newblock {{SLANG}}.{{D}}: {{Fast}}, {{Modular}} and {{Differentiable Shader
+  Programming}}.
+\newblock {\em ACM Transactions on Graphics}, 42(6):1--28, December 2023.
+
+\bibitem{kerbl3DGaussianSplatting2023}
+Bernhard Kerbl, Georgios Kopanas, Thomas Leimkuehler, and George Drettakis.
+\newblock {{3D Gaussian Splatting}} for {{Real-Time Radiance Field Rendering}}.
+\newblock {\em ACM Transactions on Graphics}, 42(4):1--14, August 2023.
+
+\bibitem{mildenhallNeRFRepresentingScenes2020}
+Ben Mildenhall, Pratul~P. Srinivasan, Matthew Tancik, Jonathan~T. Barron, Ravi
+  Ramamoorthi, and Ren Ng.
+\newblock {{NeRF}}: {{Representing Scenes}} as {{Neural Radiance Fields}} for
+  {{View Synthesis}}, August 2020.
+
+\bibitem{mullerInstantNeuralGraphics2022}
+Thomas M{\"u}ller, Alex Evans, Christoph Schied, and Alexander Keller.
+\newblock Instant {{Neural Graphics Primitives}} with a {{Multiresolution Hash
+  Encoding}}.
+\newblock {\em ACM Transactions on Graphics}, 41(4):1--15, July 2022.
+
+\end{thebibliography}

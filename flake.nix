@@ -3,7 +3,7 @@
 
   inputs =
     {
-      nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+      nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
       flake-utils.url = "github:numtide/flake-utils";
     };
 
@@ -25,6 +25,12 @@
                 # Python environment.
                 python3
                 uv
+                # LaTeX environment with comprehensive package collection
+                texlive.combined.scheme-full
+                # Additional tools for LaTeX workflow
+                biber # Bibliography processor for biblatex
+                # Code editor support (optional)
+                texlab # LSP server for LaTeX
               ];
               shellHook = ''
                 # Unset XCode SDK to avoid build issues on macOS

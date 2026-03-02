@@ -1,0 +1,9 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{p}{[}\PYG{n}{shader}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{compute}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{]}
+\PYG{p}{[}\PYG{n+nd}{numthreads}\PYG{p}{(}\PYG{l+m+mi}{256}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{]}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{addMain}\PYG{p}{(}\PYG{k+kt}{uint3}\PYG{+w}{ }\PYG{n}{tid}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n+nd}{SV\PYGZus{}DispatchThreadID}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{StructuredBuffer}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{float}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{StructuredBuffer}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{float}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{RWStructuredBuffer}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{float}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{k}{out}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{uint}\PYG{+w}{ }\PYG{n}{N}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{uint}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{tid}\PYG{p}{.}\PYG{n}{x}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{N}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{out}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

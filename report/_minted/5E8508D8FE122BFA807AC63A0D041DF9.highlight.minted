@@ -1,0 +1,16 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kr}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{backward}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{M}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{N}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{DifferentialPtrPair}\PYG{o}{\PYGZlt{}}\PYG{n}{LinearLayer}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{layer}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{inout}\PYG{+w}{ }\PYG{n}{DifferentialPair}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{float}\PYG{p}{[}\PYG{n}{N}\PYG{p}{]}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{float}\PYG{p}{[}\PYG{n}{M}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{grad}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{var}\PYG{+w}{ }\PYG{n}{dx}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{float}\PYG{p}{[}\PYG{n}{N}\PYG{p}{]}\PYG{p}{)}\PYG{p}{.}\PYG{n}{dzero}\PYG{p}{(}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mo}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{M}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{+}\PYG{o}{+}\PYG{n}{i}\PYG{p}{)}
+\PYG{+w}{    }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{layer}\PYG{p}{.}\PYG{n}{d}\PYG{p}{.}\PYG{n}{bias}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{grad}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mo}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{j}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{N}\PYG{p}{;}\PYG{+w}{ }\PYG{o}{+}\PYG{o}{+}\PYG{n}{j}\PYG{p}{)}
+\PYG{+w}{        }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{layer}\PYG{p}{.}\PYG{n}{d}\PYG{p}{.}\PYG{n}{weight}\PYG{p}{[}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{N}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{j}\PYG{p}{]}\PYG{p}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{x}\PYG{p}{.}\PYG{n}{p}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{grad}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{            }\PYG{n}{dx}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{+}\PYG{o}{=}\PYG{+w}{ }\PYG{n}{layer}\PYG{p}{.}\PYG{n}{d}\PYG{p}{.}\PYG{n}{weight}\PYG{p}{[}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{N}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{grad}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{n}{x}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{diffPair}\PYG{p}{(}\PYG{n}{x}\PYG{p}{.}\PYG{n}{p}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{dx}\PYG{p}{)}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}
